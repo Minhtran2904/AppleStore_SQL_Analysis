@@ -9,8 +9,7 @@ Journal:
 - focus on main areas of interest including:
   + Day of the week
   + Road type
-  + Speed limit
-  + Vehicile type
+  + Vehicle type
   + Journey purpose
   + Gender of driver
   + Age of driver
@@ -18,6 +17,5 @@ Journal:
   + Vehicle reference (type)
   + Casualty reference
   + Gender of casualty
-  + Age of casualty
 - next
 - 
