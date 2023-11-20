@@ -25,3 +25,8 @@ WHERE track_name IS NULL OR user_rating IS NULL OR prime_genre IS NULL
 
 SELECT COUNT(*) AS MissingValues FROM appleStore_description_combined
 WHERE app_desc IS NULL
+
+/*Find out the number of apps per genre*/
+SELECT prime_genre, COUNT(*) AS Number_of_Apps FROM AppleStore
+GROUP BY prime_genre
+ORDER BY Number_of_Apps DESC
