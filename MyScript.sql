@@ -54,3 +54,11 @@ GROUP BY 1 ORDER BY 2 DESC
 SELECT prime_genre, avg(user_rating) AS AvgRating
 FROM AppleStore
 GROUP BY 1 ORDER BY 2 ASC LIMIT 10
+
+/*Check if there is correlation betwene apps description's length with user rating*/
+SELECT CASE
+			WHEN length(b.app_desc) < 500 THEN "Short"
+            WHEN length(b.app_desc) BETWEEN 500 AND 1000 THEN "Medium"
+            ELSE "Long"
+            END AS Description_Length,
+            avg(user_rating) AS AvgRating
