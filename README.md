@@ -1,4 +1,4 @@
-# UK_Road_Safety
+# AppleStore Analysis
 
 Analysis for Apple Store's ratings that might correlate with certain trends
 
