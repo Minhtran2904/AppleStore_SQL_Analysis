@@ -49,3 +49,8 @@ SELECT CASE
             avg(user_rating) AS AvgRate
 FROM AppleStore
 GROUP BY 1 ORDER BY 2 DESC
+
+/*Check genres with low rating*/
+SELECT prime_genre, avg(user_rating) AS AvgRating
+FROM AppleStore
+GROUP BY 1 ORDER BY 2 ASC LIMIT 10
