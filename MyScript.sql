@@ -39,3 +39,13 @@ SELECT CASE
             avg(user_rating) AS AvgRate
 FROM AppleStore
 GROUP BY 1 ORDER BY 2 DESC
+
+/*Check if apps with more supported languages have higher ratings. Middle value would be 10 languages --> more than 30 languages tends to have much higher rating*/
+SELECT CASE
+			WHEN lang_num < 10 THEN "<10 languages"
+            WHEN lang_num BETWEEN 10 AND 30 THEN "10 - 30 languages"
+            ELSE ">30 languages"
+            END AS Language_Support,
+            avg(user_rating) AS AvgRate
+FROM AppleStore
+GROUP BY 1 ORDER BY 2 DESC
