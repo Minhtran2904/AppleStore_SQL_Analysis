@@ -62,3 +62,9 @@ SELECT CASE
             ELSE "Long"
             END AS Description_Length,
             avg(user_rating) AS AvgRating
+			FROM AppleStore AS A
+			
+JOIN appleStore_description_combined AS B
+ON A.id = B.id
+
+GROUP BY 1 ORDER BY 2 DESC
