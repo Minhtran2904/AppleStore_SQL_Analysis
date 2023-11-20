@@ -30,3 +30,12 @@ WHERE app_desc IS NULL
 SELECT prime_genre, COUNT(*) AS Number_of_Apps FROM AppleStore
 GROUP BY prime_genre
 ORDER BY Number_of_Apps DESC
+
+/*Determine whether paid apps have higher ratings than free apps --> Rating of paid is slightly higher than free apps*/
+SELECT CASE
+			WHEN price > 0 THEN "Paid"
+            ELSE "Free"
+            END AS App_Type,
+            avg(user_rating) AS AvgRate
+FROM AppleStore
+GROUP BY 1 ORDER BY 2 DESC
