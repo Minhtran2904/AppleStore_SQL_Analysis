@@ -63,8 +63,24 @@ SELECT CASE
             END AS Description_Length,
             avg(user_rating) AS AvgRating
 			FROM AppleStore AS A
-			
+
 JOIN appleStore_description_combined AS B
 ON A.id = B.id
 
 GROUP BY 1 ORDER BY 2 DESC
+
+/*Check top-rated apps for each genre (use WINDOW function)*/
+SELECT 
+	prime_genre,
+    track_name,
+    user_rating
+FROM (
+  		SELECT
+  		prime_genre,
+  		track_name,
+  		user_rating,
+  		RANK() OVER(PARTITION BY prime_genre ORDER BY user_rating DESC, rating_count_tot DESC) AS rank
+  		FROM AppleStore
+  ) AS a
+WHERE
+a.rank = 1
