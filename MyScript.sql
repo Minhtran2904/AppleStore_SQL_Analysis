@@ -1,3 +1,4 @@
+/*This is for working with sqlonline.com where imported file size is capped at 3Mb*/
 CREATE TABLE appleStore_description_combined AS
 
 SELECT * FROM appleStore_description1
@@ -11,6 +12,7 @@ UNION ALL
 SELECT * FROM appleStore_description3
 
 UNION ALL 
+/*Above this is for working with sqlonline.com*/
 
 SELECT * FROM appleStore_description4
 
