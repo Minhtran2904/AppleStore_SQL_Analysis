@@ -86,3 +86,5 @@ FROM (
   ) AS a
 WHERE
 a.rank = 1
+
+SELECT * FROM AppleStore
